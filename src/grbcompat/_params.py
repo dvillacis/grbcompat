@@ -22,6 +22,7 @@ _PARAM_MAP: dict[str, tuple[str | None, type | None]] = {
     "SolFiles": (None, None),
     "SolutionNumber": (None, None),
     "LazyConstraints": (None, None),   # wrapper handles lazy constraints in Python
+    "Method": (None, None),            # Gurobi LP/MIP algorithm selector, no HiGHS equivalent
 }
 
 

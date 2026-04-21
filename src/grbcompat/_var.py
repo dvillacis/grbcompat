@@ -41,6 +41,11 @@ class Var:
         return float(self._model._solution.col_value[self._col_idx])
 
     @property
+    def x(self) -> float:
+        """Lowercase alias for X — accepts both .x and .X."""
+        return self.X
+
+    @property
     def RC(self) -> float:
         """Reduced cost (available after optimize())."""
         self._check_live()
