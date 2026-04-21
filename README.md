@@ -1,5 +1,9 @@
 # grbcompat
 
+[![PyPI](https://img.shields.io/pypi/v/grbcompat)](https://pypi.org/project/grbcompat/)
+[![CI](https://github.com/dvillacis/grbcompat/actions/workflows/ci.yml/badge.svg)](https://github.com/dvillacis/grbcompat/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A Python package that lets you run [gurobipy](https://www.gurobi.com/documentation/current/refman/py_python_api_details.html)-based optimization models on the free, open-source [HiGHS](https://highs.dev) solver — with **no changes to your existing code**.
 
 ## Why
