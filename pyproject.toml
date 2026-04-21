@@ -1,0 +1,39 @@
+[project]
+name = "grbcompat"
+version = "0.1.0"
+description = "Drop-in gurobipy wrapper backed by the HiGHS solver"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [
+    { name = "David Villacis" },
+]
+keywords = ["gurobi", "highs", "optimization", "linear-programming", "mip", "wrapper"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Intended Audience :: Science/Research",
+]
+dependencies = [
+    "highspy>=1.7",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/grbcompat"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "gurobipy>=13.0.1",
+]
