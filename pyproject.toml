@@ -37,3 +37,8 @@ dev = [
     "pytest>=8.0",
     "gurobipy>=13.0.1",
 ]
+
+[project.urls]
+homepage = "https://github.com/dvillacis/grbcompat"
+repository = "https://github.com/dvillacis/grbcompat"
+issues = "https://github.com/dvillacis/grbcompat/issues"
