@@ -1,6 +1,6 @@
 [project]
 name = "grbcompat"
-version = "0.1.0"
+version = "0.1.2"
 description = "Drop-in gurobipy wrapper backed by the HiGHS solver"
 readme = "README.md"
 requires-python = ">=3.11"

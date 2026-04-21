@@ -15,7 +15,7 @@ quicksum, …) and translates them to the highspy / HiGHS solver under the hood.
 
 import sys
 
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 
 from grbcompat._constants import GRB
 from grbcompat._constr import Constr

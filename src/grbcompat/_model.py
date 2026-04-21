@@ -209,6 +209,19 @@ class Model:
     # ------------------------------------------------------------------ #
 
     def addConstr(self, lhs_or_tc, sense=None, rhs=None, name: str = "") -> Constr:
+        if isinstance(lhs_or_tc, bool):
+            # Occurs when an accumulator is initialised as 0 (int) and N is
+            # empty, so `0 <= a[v]` evaluates to a plain Python bool.
+            # True  → trivially satisfied (add an empty row -inf <= 0 <= inf)
+            # False → trivially infeasible (add an empty row 1 <= 0)
+            if lhs_or_tc:
+                self._h.addRow(-_INF, _INF, 0, [], [])
+            else:
+                self._h.addRow(1.0, 0.0, 0, [], [])
+            row_idx = self._h.getNumRow() - 1
+            c = Constr(row_idx, self, name=name, sense=GRB.EQUAL, rhs=0.0)
+            self._constrs.append(c)
+            return c
         if isinstance(lhs_or_tc, TempConstr):
             tc = lhs_or_tc
             lhs_expr = _to_linexpr(tc.lhs)
